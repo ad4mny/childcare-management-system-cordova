@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonda Sediah</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-light vh-100 position-relative">
+    <nav class="navbar navbar-light bg-white shadow sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Bonda Sadiah</a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <i class="fas fa-bars fa-fw"></i>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link" href="attendance.html">Scan Attendence</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active border-bottom" href="announcement.html">View Announcement</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex pt-5 ">
+                        <a class="btn btn-danger" href="#" onclick="logout()">Logout</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-3">
+        <div class="row my-3">
+            <div class="col-auto">
+                <h3 class="mb-0 fw-bold">
+                    Announcement List
+                </h3>
+            </div>
+        </div>
+        <div id="display">
+
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="ajax/app.js"></script>
+    <script type="text/javascript" src="ajax/announcement.js"></script>
+
+</body>
+
+</html>
