@@ -56,6 +56,7 @@ var scan = function () {
     cordova.plugins.barcodeScanner.scan(function (result) {
 
         var id = result["text"];
+        alert('Child attendance has been added succesfully.');
 
         $.ajax({
             type: "POST",
@@ -74,8 +75,6 @@ var scan = function () {
                 } else {
                     alert('Scanning error! Scan the QR again.');
                 }
-
-                location.replace('attendance.html');
 
             },
             error: function () {
