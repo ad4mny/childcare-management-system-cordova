@@ -8,21 +8,29 @@ window.addEventListener('load', (event) => {
         },
         success: function (data) {
 
+            var today = new Date();
+            var date = today.getFullYear() + '/' + (today.getMonth() + 1) + '/' + today.getDate();
+            var print_display;
+
             if (data != "") {
+
                 for (var i = 0; i < data.length; i++) {
-                    $('#display').append('<div class="row pt-2">' +
+
+                    print_display =
+                        '<div class="row pt-2">' +
                         '<div class="col">' +
                         '<p class="text-capitalize mb-0 fw-bold">' + data[i]['date'] + '</p>' +
                         '</div>' +
-                        '</div>');
+                        '</div>';
 
-                    var attendenceid = data[i]['attendenceid'].split(',');
+
+                    // var attendenceid = data[i]['attendenceid'].split(',');
                     var fullname = data[i]['fullname'].split(',');
                     var status = data[i]['status'].split(',');
                     var time = data[i]['time'].split(',');
 
                     for (var x = 0; x < fullname.length; x++) {
-                        $('#display').append(
+                        print_display +=
                             ' <div class="row rounded-3 shadow-sm border bg-white mb-1 mx-1">' +
                             '    <div class="col-6">' +
                             '        <p class="text-truncate text-capitalize mb-0">' + fullname[x] + '</p>' +
@@ -33,8 +41,13 @@ window.addEventListener('load', (event) => {
                             '    <div class="col">' +
                             '        <p class="text-capitalize mb-0">' + time[x] + '</p>' +
                             '    </div>' +
-                            '</div>'
-                        );
+                            '</div>';
+                    }
+
+                    if (data[i]['date'] == date) {
+                        $('#display').append(print_display);
+                    } else {
+                        $('#history').append(print_display);
                     }
                 }
             } else {
